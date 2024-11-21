@@ -7,6 +7,3 @@ def add(a, b):
 def subtract(a, b):
     # TODO: Implement this function
     pass
-
-def multiply(a, b):
-    return a*b
