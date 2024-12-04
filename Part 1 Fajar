@@ -1,0 +1,223 @@
+import time
+def slow_typing(text):
+    for char in text:
+        print(char, end='', flush=True)  # Print each character on the same line
+        time.sleep(0.08)  # Pause for 0.1 seconds
+    print()  # Move to the next line after the loop
+
+def pause(text):
+    input(text)
+    return
+
+
+def no_empty_input(input_prompt, second_prompt):
+    value = input(input_prompt).strip().lower()
+    while True:
+        if value == '':
+            value = input(second_prompt).strip().lower()
+        else:
+            return value
+            break
+
+stats = {'health':80, 'safety':50, 'academics':30, 'social':50 }
+accepted_answers = ['yes', 'no']
+
+name = no_empty_input("Enter your name:", "Please enter a name:")
+
+print(f'''
+                        -------------------------------
+                        ~~ Welcome {name} 
+                        -------------------------------
+    In this text based adventure game, your aim is to make it to the end of
+    year 11 alive...
+
+Current stats:
+Health: 80
+Academics: 30
+Social: 50
+Safety: 50
+----------------------------------------------------------------------------''')
+
+time.sleep(8)
+
+print(f'Good morning {name}, today is your first day of year 11!')
+time.sleep(3)
+
+while True:
+    choice = no_empty_input("Are you excited? (yes/no)", "Just a reminder to choose from the options provided :)\nAre you excited? (yes/no)")    
+    if choice == 'yes':
+        print("Well then, let's get ready for school!")
+        stats['academics'] += 1
+        break
+    elif choice == "no":
+        text = '. . .'
+        slow_typing(text)
+        time.sleep(1)
+        print('Well you have to get ready anyway :\ ')
+        stats['academics'] -= 1
+        break
+    else:
+        choice = input("Just a reminder to choose from the options provided :)\nAre you excited? (yes/no)")
+        
+        
+            
+time.sleep(3)
+print("\nAre you gonna put your books in your bag?\na)Why would I? its the first day, no one does work.\nb)Yeah, i'll get to it.")
+while True:
+    choice_books = no_empty_input("(choose a or b)", "(please choose a or b)")
+    if choice_books == 'b':
+        text = '*you packed your bag, good job!*'
+        slow_typing(text)
+        stats['academics'] += 1
+        break
+    elif choice_books == 'a':
+        text = ('. . .')
+        slow_typing(text)
+        time.sleep(1)
+        print("This is your game so whatever you want i guess.")
+        time.sleep(2)
+        choice_books = input("You sure?  (im sure/fine, ill pack)").strip().lower()
+        if choice_books == 'im sure':
+            print("alright then.")
+            stats['academics'] -= 2
+            break
+        elif choice_books == 'fine, ill pack':
+            print("Good choice.")
+            stats['academics'] += 2
+            break
+    else:
+        choice_books = input("(please choose a or b)")
+
+time.sleep(3)
+print("----------------------------------------------------------------------------")
+slow_typing('*After that, you get going to school*')
+time .sleep(1)
+pause("Hey, since we have some time right now, some rules:\n[press Enter]")
+pause("Throughout the game, only type what's written in ( / ) or [] as your responses. If there are no options, don't type anything. [Enter]")
+pause("You have stats in the game as you saw at the start. Every choice you make affects them, so make sure to choose wisely. Rememeber, your goal is to survive till the end. [Enter]")
+slow_typing('*The wind picks up, you hear a crow in the distance*')
+time.sleep(2)
+pause("I really hope your day goes well today, and none of *those* guys come. [Enter]")
+slow_typing('. . .')
+print("What guys am i talking about? You know! th-them -->")
+time.sleep(3)
+print('''
+                                   𓌹  𓌺
+      ¯\༼ ༎ຶ ෴ ༎ຶ༽/¯    {¬ºཀ°}¬   (꒪ཀ꒪)
+       ༼   _ ¯ -   ༽       ||      {-}
+      ༼  ¯  - _  ¯  ༽  	  / \      ||
+      ''')
+time.sleep(2)
+print("RUNNN!!!!")
+time.sleep(2)
+
+while True:
+    choice = no_empty_imput("[run] or [stay]", "Chose one of the options dude, quickly!\n[run] or [stay]").strip().lower()
+    if choice == 'stay':
+        print("What are you doing? They're gonna get you! Get away!")
+        time.sleep(1)
+        choice = input("[run] or [stay]").strip().lower()
+        if choice == 'run':
+            slow_typing('*You chose to run*')
+            pause("What on earth were you thinking!")
+            slow_typing('*Your heart rate increases. What were those things?!*')
+            time.sleep(2)
+            pause("*You run all the way to school  without looking back. Maybe you just imagined it?*")
+            stats['health'] -= 8
+            break
+        elif choice == 'stay':
+            slow_typing('. . .')
+            choice = input("What are you gonna do then? Fight? \n[i guess] or [how]").strip().lower()
+            if choice == 'how':
+                time.sleep(1)
+                slow_typing('. . .')
+                time.sleep(1)
+                print("You're screwed dude\n")
+                time.sleep(1)
+                print('''
+      ¯\༼ ༎ຶ ෴ ༎ຶ༽/¯ RAAAA!
+       ༼   _ ¯ -   ༽ 
+      ༼  ¯  - _  ¯  ༽''')
+                time.sleep(2)
+                print("\n*squash*")
+                time.sleep(1)
+                print('\n*smack*')
+                time.sleep(1)
+                print('\n*squelch*')
+                time.sleep(2)
+                slow_typing('*you were crushed by the monster*')
+                pause("If you were gonna stay, you could have atleast tried to fight back :/  [Enter]")
+                stats['health'] -=12
+                break
+            else:
+                time.sleep(1)
+                print("You're screwed dude\n")
+                time.sleep(1)
+                slow_typing('*you chose to fight*')
+                time.sleep(1)
+                print("You dont know how to fight yet!")
+                time.sleep(3)
+                print('''
+      ¯\༼ ༎ຶ ෴ ༎ຶ༽/¯ RAAAA!
+       ༼   _ ¯ -   ༽ 
+      ༼  ¯  - _  ¯  ༽''')
+                time.sleep(2)
+                print("\n*squash*")
+                time.sleep(1)
+                print('\n*smack*')
+                time.sleep(1)
+                print('\n*squelch*')
+                time.sleep(2)
+                pause("*you tried fighting the monster, but you couldn't, and you were crushed.*")
+                time.sleep(2)
+                pause("Well that was dumb. [Enter]")
+                stats['health'] -=10
+                stats['safety'] +=5
+                break
+    if choice == 'run':
+        slow_typing('*You chose to run*')
+        time.sleep(1)
+        pause("Thankgoodness! Why on earth would you choose to stay?")
+        stats['safety'] -= 8
+        break
+    else:
+        choice = input('[run] or [stay]', "Chose one of the options dude, quickly!")
+
+print("----------------------------------------------------------------------------")
+text = '*you finally get to school*'
+slow_typing(text)
+time.sleep(1)
+print("Let's hope the rest of your day goes easier")
+
+time.sleep(3)
+pause = input("\n*You walk into the familiar building and head to your coordinators office. You collect your timetable. Your first class is Physics with Br.James. Lets go!* [Enter]")
+print("\n*BRINNGGGG!!")
+time.sleep(2)
+pause = input("*The bell goes just as you walk in. Suddenly your teacher looks at you* [Enter]") 
+if choice_books == 'b':
+    pause = input(f"Br James: {name}!, come sit down! [Enter]")
+    stats['social'] += 2
+elif choice_books == 'fine, ill pack':
+    pause = input(f"Br James: {name}!, come sit down! [Enter]")
+    stats['social'] += 2
+else:
+    print(f"\nBr James: {name}, why are you walking in empty handed, where are your books?")
+    time.sleep(4)
+    print(f"{name}: I didn't think we'd need them today.")
+    time.sleep(3)
+    text = "*Br James was very disapointed with you and gave you a negative*"
+    slow_typing(text)
+    time.sleep(1)
+    choice = input("Looks like you messed up dude. [Enter]")
+    stats['academics'] -= 3
+    
+print("----------------------------------------------------------------------------")
+text = "*After a long, grueling day at school, you finally head home."
+slow_typing(text)
+time.sleep(2)
+
+
+
+
+
+
