@@ -538,7 +538,7 @@ def weekend():
     print()
     weekend_options = slow_text("(1) Study for school\n(2) Go out with friends\n(3) Stay home and play games\n(4) Stay home and rest", 0.06)
     print()
-    weekend_choice = input("Do you choose 1, 2 or 3? ").strip()
+    weekend_choice = input("Do you choose 1, 2, 3 or 4? ").strip()
     while weekend_choice != '1' and weekend_choice != '2' and weekend_choice != '3' and weekend_choice != '4':
         weekend_choice = input("I said 1, 2, 3 or 4 ")
     print()
