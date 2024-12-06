@@ -14,7 +14,7 @@ teacher_of_class = {
     'Methods with sr Meenu':'sr Meenu',
     'English with sr Jamila':'sr Jamila',
     'Computer Science with br Zaim':'br Zaim',
-    'Sports with miss Fee':'miss Fee'}
+    'Politics and Law with sr Dina':'sr Dina'}
 
 name = no_empty_input("Enter your name:", "Please enter a name:")
 
@@ -32,7 +32,7 @@ Social: 50
 Safety: 50
 ----------------------------------------------------------------------------''')
 
-time.sleep(1)
+time.sleep(8)
 
 print(f'Good morning {name}, today is your first day of year 11!')
 time.sleep(3)
@@ -43,7 +43,7 @@ while True:
         stats['academics'] += 1
         break
     elif choice == "no":
-        slow_typing('. . .')
+        slow_typing('. . .', 0.1)
         time.sleep(1)
         print('Well you have to get ready anyway :\ ')
         stats['academics'] -= 1
@@ -56,11 +56,11 @@ print("\nAre you gonna put your books in your bag?\na)Why would I? its the first
 choice_books = check_valid_input("(choose a or b)", "(please choose a or b)", ['a','b'])
 while True:
     if choice_books == 'b':
-        slow_typing('*you packed your bag, good job!*')
-        stats['academics'] += 1
+        slow_typing('*you packed your bag, good job!*', 0.06)
+        stats['academics'] += 
         break
     else:
-        slow_typing('. . .')
+        slow_typing('. . .', 0.1)
         time.sleep(1)
         print("This is your game so whatever you want i guess.")
         time.sleep(2)
@@ -76,17 +76,17 @@ while True:
 
 time.sleep(3)
 print("----------------------------------------------------------------------------")
-slow_typing('*After that, you get going to school*')
+slow_typing('*After that, you get going to school*', 0.06)
 time .sleep(1)
 choice = input("Hey, since we have some time right now, some rules: [press Enter]")
 pause("Throughout the game, only type what's written in ( / ) or [] as your responses. If there are no options, don't type anything.")
 pause("You have stats in the game as you saw at the start. Every choice you make affects them, so make sure to choose wisely.")
 pause("Infact, some of the choices you've made have already affected them.")
 pause("You can view stats at the end of each term.")
-slow_typing('*The wind picks up, you hear a crow in the distance*')
+slow_typing('*The wind picks up, you hear a crow in the distance*', 0.06)
 time.sleep(2)
 pause("I really hope your day goes well today, and none of *those* guys come.")
-slow_typing('. . .')
+slow_typing('. . .',0.1)
 print("What guys am i talking about? You know! th-them -->")
 time.sleep(3)
 print('''
@@ -106,19 +106,19 @@ while True:
         time.sleep(1)
         choice = check_valid_input("[run] or [stay]", '[run] or [stay]!', ['run', 'stay'])        
         if choice == 'run':
-            slow_typing('*You chose to run*')
+            slow_typing('*You chose to run*', 0.06)
             pause("What on earth were you thinking!")
-            slow_typing('*Your heart rate increases.*')
+            slow_typing('*Your heart rate increases.*', 0.06)
             time.sleep(3)
-            slow_typing("*You end up running all the way to school without looking back*")
+            slow_typing("*You end up running all the way to school without looking back*", 0.06)
             stats['health'] -= 5
             break
         else:
-            slow_typing('. . .')
+            slow_typing('. . .', 0.1)
             choice = input("What are you gonna do then? Fight? \n[i guess] or [how]").strip().lower()
             if choice == 'how':
                 time.sleep(1)
-                slow_typing('. . .')
+                slow_typing('. . .',0.1)
                 time.sleep(1)
                 print("You're screwed dude\n")
                 time.sleep(2)
@@ -133,15 +133,16 @@ while True:
                 time.sleep(1)
                 print('\n*squelch*')
                 time.sleep(2)
-                slow_typing('*you were crushed by the monster*')
+                slow_typing('*you were crushed by the monster*', 0.06)
                 pause("If you were gonna stay, you could have atleast tried to fight back :/ ")
-                stats['health'] -=15
+                stats['health'] -=20
+                stats['safety'] -=5
                 break
             elif choice == 'i guess':
                 time.sleep(1)
                 print("You're screwed dude\n")
                 time.sleep(1)
-                slow_typing('*you chose to fight*')
+                slow_typing('*you chose to fight*', 0.06)
                 time.sleep(1)
                 print("You dont know how to fight yet!")
                 time.sleep(2)
@@ -158,14 +159,14 @@ while True:
                 time.sleep(2)
                 pause("*you tried fighting the monster, but you couldn't, and you were crushed.*")
                 pause("Well that was dumb.")
-                stats['health'] -=10
+                stats['health'] -=15
                 stats['safety'] +=5
                 break
             else:
                 print("A valid option was not selected.")
                 time.sleep(2)
-                slow_typing("*You end up just standing where you were*")
-                slow_typing('. . .')
+                slow_typing("*You end up just standing where you were*", 0.06)
+                slow_typing('. . .',0.1)
                 time.sleep(1)
                 print("You're screwed dude\n")
                 time.sleep(2)
@@ -180,20 +181,21 @@ while True:
                 time.sleep(1)
                 print('\n*squelch*')
                 time.sleep(2)
-                slow_typing('*you were crushed by the monster*')
+                slow_typing('*you were crushed by the monster*', 0.06)
                 time.sleep(1)
                 pause("next time, type one of the options!")
-                stats['health'] -=15
+                stats['health'] -=20
+                stats['safety'] -=5
                 break
     else:
-        slow_typing('*You chose to run*')
+        slow_typing('*You chose to run*', 0.06)
         time.sleep(1)
         pause("Thankgoodness! Why on earth would you choose to stay?")
-        stats['safety'] -= 8
+        stats['safety'] -= 5
         break
 
 print("----------------------------------------------------------------------------")
-slow_typing('*you finally get to school*')
+slow_typing('*you finally get to school*', 0.06)
 time.sleep(1)
 print("Let's hope the rest of your day goes easier")
 
@@ -207,8 +209,8 @@ time.sleep(2)
 pause("*The bell goes just as you walk in. Suddenly your teacher looks at you*") 
 if choice_books in ['b' ,'fine, ill pack']:
     pause(f"{teacher1}: {name}!, come sit down!")
-    stats['social'] += 2
-    slow_typing("*Since you brought your books, you had a productive lesson*")
+    stats['social'] += 3
+    slow_typing("*Since you brought your books, you had a productive lesson*", 0.06)
     time.sleep(3)
     pause("The rest of your day went amazing. You met your friends, and you enjoyed most of your classes.")
 else:
@@ -216,7 +218,7 @@ else:
     time.sleep(4)
     print(f"{name}: I didn't think we'd need them today.")
     time.sleep(3)
-    slow_typing(f"*{teacher1} was very disapointed with you and gave you a negative*")
+    slow_typing(f"*{teacher1} was very disapointed with you and gave you a negative*", 0.06)
     time.sleep(1)
     pause("Looks like you messed up.")
     stats['academics'] -= 3
@@ -224,13 +226,13 @@ else:
     stats['social'] -=3
 
 print("----------------------------------------------------------------------------")
-slow_typing("*After a long, tiring day at school, you finally head home.*")
+slow_typing("*After a long, tiring day at school, you finally head home.*", 0.06)
 choice = input('[Enter]')
 pause("You kick off your shoes, throw your bag on your chair and plop onto your bed.")
 pause("You think to yourself, 'Will every day of year 11 be like this?'")
 time.sleep(2)
-slow_typing("\n*¨¨*:·..·:*¨¨*:·..·:*¨¨*:·..·:*¨¨*:·..·:*¨¨*")
-slow_typing("9 Weeks later...",)
+slow_typing("\n*¨¨*:·..·:*¨¨*:·..·:*¨¨*:·..·:*¨¨*:·..·:*¨¨*", 0.08)
+slow_typing("9 Weeks later...",0.08)
 time.sleep(2)
 pause("*Lets find out how the rest of your term went*")
 print("----------------------")
@@ -253,24 +255,14 @@ prompts = [
 for i in prompts:
     mad_add(i)
 
-slow_typing("processing...")
+slow_typing("processing...", 0.08)
 time.sleep(1)
 slow_typing('''Every day you would look forward to {0}. On the weekends you enjoyed {1} with {2} and {3}. Studying was {4}.
-Once, you even lost your {5} {6} some {7}. Those same {7} were a gift by your {8} after completing your tests. Speaking of tests, should'nt you be studying for your finals?'''.format(*madlibs))
-
-convo = [
-    "BEEP",
-    "{madlibs[2]}: Hello?",
-    "{name}: Hi! What're you doing right now {madlibs[2]}",
-    "{madlibs[2]}: . . .",
-    '{name}: {madlibs[2]?}',
-    "{madlibs[2]}: ITS 1:47 AM DUDE. GO TO SLEEP",
-    "BEEP"]
-
+Once, you even lost your {5} {6} some {7}. Those same {7} were a gift by your {8} after completing your tests. Speaking of tests, should'nt you be studying for your finals?'''.format(*madlibs),0.08)
 
 choice = check_valid_input("Will you study or not?\na) Ofcourse, i can't fail my finals!\nb) nah\n", "choose from [a] or [b]:", ['a', 'b'])
 if choice == 'a':
-    slow_typing("*You chose to study*")
+    slow_typing("*You chose to study*", 0.06)
     time.sleep(1)
     stats['academics'] += 10
     pause("You focus in class and do your homework when you come home. You spend hours revising your lessons and preparing for your tests")
@@ -278,60 +270,52 @@ if choice == 'a':
     choice = check_valid_input("Do you keep studying?\na) I have to\nb)I'll take a break", "choose from [a] or [b]",['a', 'b'])
     if choice == 'a':
         stats['academics'] += 10
-        slow_typing("*You keep studying*")
+        slow_typing("*You keep studying*", 0.06)
         stats['health'] -=6
+        stats['academics'] +=5
         time.sleep(2)
-        slow_typing("z z zzzz...")
+        slow_typing("z z zzzz...", 0.1)
         time.sleep(2)
         print("You fell asleep!")
         time.sleep(2)
         pause("You exhausted yourself studying.")
         pause("Let's hope that all this studying will be worth it in the end atleast :/")
     else:
-        slow_typing("You decide to take a break")
+        slow_typing("*You decide to take a break*", 0.06)
         time.sleep(2)
         choice = check_valid_input("Do you:\na)Spend time with friends or \nb)Go for a walk outside?", 'choose [a] or [b]', ['a', 'b'])
         if choice == 'a':
             stats['social'] += 5
-            slow_typing(f"You pull out your phone and call {madlibs[2]}")
+            slow_typing(f"You pull out your phone and call {madlibs[2]}",0.06)
             time.sleep(1)
-            slow_typing("ringgg...ringgg...ring...")
+            slow_typing("ringgg...ringgg...ring...", 0.18)
             time.sleep(1)
-            slow_typing(". . .")
+            slow_typing(". . .", 0.1)
             time.sleep(1)
-            for i in convo:
-                print(i)
-                time.sleep(1)
-            slow_typing(". . .")
+            print("BEEP")
+            time.sleep(1)
+            print(f"{madlibs[2]}: Hello?")
+            time.sleep(1)
+            print("{0}: Hi! What're you doing right now {1}".format(name, madlibs[2]))
+            time.sleep(2)
+            print(f"{madlibs[2]}: . . .")
+            time.sleep(2)
+            print(f"{madlibs[2]}: ITS 1:47 AM DUDE. GO TO SLEEP")
+            time.sleep(1)
+            print("BEEP")
+            time.sleep(2)
+            slow_typing(". . .", 0.15)
             time.sleep(1)
             pause("Yeah, I should get some sleep.")
         else:
-            print("1")
-            #copy paste the moster thing
-else:
-    slow_typing("*You chose to not study*")
-    time.sleep(1)
-    stats['academics'] -= 10
-    pause("You step out of your house to take a walk outside. You feel the wind on your face and hear some crows in the distance.")
-    slow_typing(". . .")
-    choice = input("Do you walk back inside? (yes/no)")
-    while True:
-        if choice == 'yes':
-            slow_typing("*You start walking back*")
-            time.sleep(2)
-            pause("You feel a strange sense of deja vu...")
-            pause("You spot a cricket bat on the lawn infront of your window. You bring it in with you.")
-            print("-------------------------------------------------------")
-            break
-        elif choice == 'no':
-            stats['health'] -= 5
-            slow_typing("*You start walking*")
+            slow_typing("*You decide to get some fresh air.*", 0.06)
             time.sleep(1)
-            print("You intend on walking to the park two roads across")
+            pause("It's a lovely day out isn't it?")
+            slow_typing("*Your destination is the park two roads across*", 0.06)
             time.sleep(4)
             print("dhjfggfd...")
             time.sleep(2)
-            print("")
+            print("?")
             time.sleep(2)
             print("olkjuyghjmnhjiukjtresdfgt...")
             time.sleep(4)
@@ -347,15 +331,130 @@ else:
             time.sleep(1)
             print("*RUN*")
             time.sleep(1)
-            print("*and you run,*")
+            print("\n─=≡Σ ﾍ( ´Д`)ﾉ")
             time.sleep(1)
             print("*and you keep running until you make it back, grabbing the cricket bat that was lying on your lawn on your way in*")
             time.sleep(5)
-            slow_typing(". . .")
+            slow_typing(". . .", 0.1)
             pause("Why do these monsters keep showing up?")
-            slow_typing("*You don't know what to do*")
+            slow_typing("*You don't know what to do*" ,0.06)
+            time.sleep(2)
+            stats['safety'] -= 5
+            pause("Maybe you should've just kept studying :\ ")
+else:
+    slow_typing("*You chose to not study*",0.06)
+    time.sleep(1)
+    stats['academics'] -= 10
+    pause("You step out of your house to take a walk outside. You feel the wind on your face and hear some crows in the distance.")
+    slow_typing(". . .", 0.1)
+    choice = input("Do you walk back inside? (yes/no)")
+    while True:
+        if choice == 'yes':
+            slow_typing("*You start walking back*",0.06)
+            time.sleep(2)
+            pause("You feel a strange sense of deja vu...")
+            pause("You spot a cricket bat on the lawn infront of your window. You bring it in with you.")
+            break
+        elif choice == 'no':
+            stats['safety'] -= 5
+            slow_typing("*You start walking*",0.06)
+            time.sleep(1)
+            print("You intend on walking to the park two roads across")
+            time.sleep(4)
+            print("dhjfggfd...")
+            time.sleep(2)
+            print("?")
+            time.sleep(2)
+            print("olkjuyghjmnhjiukjtresdfgt...")
+            time.sleep(4)
+            print('''
+          _ -  ¯¯ - _
+        {     𓌹  𓌺     }
+       {     (꒪ཀ꒪)     } AWESDRTGFDRT!!!!
+        {    `{-}`    }
+         {    | |    }
+         ''')
+            time.sleep(2)
+            print("AAAAAAHHHHHH!!")
+            time.sleep(1)
+            print("*RUN*")
+            time.sleep(1)
+            print("\n─=≡Σ ﾍ( ´Д`)ﾉ")
+            time.sleep(1)
+            print("*and you keep running until you make it back, grabbing the cricket bat that was lying on your lawn on your way in*")
+            time.sleep(5)
+            slow_typing(". . .", 0.1)
+            pause("Why do these monsters keep showing up?")
+            slow_typing("*You don't know what to do*",0.06)
             time.sleep(2)
             pause("Maybe you should've just studied.")
             break
         else:
             choice = input("(yes/no)")
+            
+time.sleep(2)
+print("----------------------------------------------------------------------------")
+print("                         »»—— Exam time! ——««")
+time.sleep(2)
+slow_typing("*You walk into the exam hall*", 0.06)
+if stats['academics'] == 49:
+    time.sleep(1)
+    pause("You feel confident knowing you've studied hard.")
+    slow_typing("*Your eyes droop a bit*", 0.08)
+    time.sleep(1)
+    pause("But you also feel tired.")
+    time.sleep(1)
+    print("---------------------------------------------------------------")
+    time.sleep(1)
+    slow_typing("55 minutes later...", 0.18)
+    time.sleep(1)
+    slow_typing("z z zzzz...", 0.1)
+    time.sleep(2)
+    print(f"{teacher1}: {name}, wake up!")
+    time.sleep(2)
+    slow_typing("*You ended up falling asleep during your test because you were so tired!*", 0.08)
+    time.sleep(2)
+    pause("Did you finish atleast?")
+elif 42 < stats['academics'] <= 48:
+    time.sleep(1)
+    pause("You feel confident, trusting yourself because you studied.")
+    pause("You are alert and ready")
+    print("---------------------------------------------------------------")
+    time.sleep(1)
+    slow_typing("55 minutes later...", 0.18)
+    time.sleep(3)
+    pause("You completed your test and triple checked it.")
+    pause("You have a good feeling about this.")
+elif 30 <= stats['academics'] <= 42:
+    time.sleep(1)
+    pause("you sit down and stare at your paper.")
+    pause("It'll be fine right?")
+    print("---------------------------------------------------------------")
+    time.sleep(1)
+    slow_typing("55 minutes later...", 0.18)
+    time.sleep(3)
+    print("*sigh*")
+    time.sleep(2)
+    pause("Atleast you finished the test.")
+elif 18 <= stats['academics'] < 30:
+    time.sleep(1)
+    pause("Its dawning on you now just how much trouble you're in.")
+    pause("You sit down and flick through the paper as the timer starts.")
+    pause("You honestly wonder if you're even sitting in the correct exam hall.")
+    print("---------------------------------------------------------------")
+    time.sleep(1)
+    slow_typing("55 minutes later...", 0.18)
+    time.sleep(3)
+    pause("Welp, you definitely failed that.")
+else:
+    time.sleep(1)
+    slow_typing("and you walk out.", 0.08)
+    time.sleep(1)
+    pause("You can't be bothered.")
+    print("---------------------------------------------------------------")
+    time.sleep(1)
+    slow_typing("55 minutes later...", 0.1)
+    time.sleep(2)
+    pause("*You're currently leaning on the school gate scrolling through your phone*")
+    pause(f"{name}: whatever ¯\_(•-•)_/¯")
+
