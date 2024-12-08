@@ -385,7 +385,8 @@ def weekend():
 weekend()
 
 score = ''
-def exam():    
+def exam():
+    global score
     time.sleep(2)
     print("\n\n----------------------------------------------------------------------------")
     print("                         »»—— Exam time! ——««")
@@ -456,6 +457,7 @@ def exam():
         pause("*You're currently leaning on the school gate scrolling through your phone*")
         pause(f"{name}: whatever ¯\_(•-•)_/¯")
         score = 0
+    return score
 exam()
 
 def end_of_term(term):
@@ -1033,3 +1035,212 @@ else:
     slow_typing("As a result, you didn't study as much as you should have.", 0.04)
     time.sleep(2)
     print("\n*end of holiday*")
+    
+
+time.sleep(3)
+print("--------------------------------------------------------------------")
+pause("You arriveback to Australia during the term break.")
+pause("Next term is going to be absolutely hectic, with all your tests, assignment and . . . semester exams >-<")
+pause("You have to make the most of these two weeks.")
+choice = check_valid_input("\nDo you:\na) Meet up with your friends and catch up\nb) Study like crazy","choose [a] or [b]",['a', 'b'])
+if choice == 'b':
+    stats['health'] -= 30
+    stats['academics'] += 15
+    time.sleep(1)
+    slow_typing("*You chose to study*", 0.06)
+    time.sleep(1)
+    slow_typing("You study and you study and you study,", 0.06)
+    time.sleep(1)
+    pause("You loose sleep and you even end up skipping meals.")
+    if stats['health'] < 31:
+        time.sleep(1)
+        slow_typing(". . .", 0.5)
+        time.sleep(1)
+        print("*THUD*")
+        time.sleep(1)
+        slow_typing("*You fainted!*", 0.06)
+        time.sleep(1)
+        pause("An ambulance is called and you're rushed to the hospital")
+    else:
+        pause("What a great way to spend your break.")
+else:
+    slow_typing("You call your friends and agree to meet up at the park.", 0.06)
+    time.sleep(1)
+    print("--------------------------------------------------------------------")
+    slow_typing("                         At the park:", 0.06)
+    time.sleep(1)
+    pause(f"{name}: Hey guys! It's been too long,")
+    pause(f"{madlibs[2]} and {madlibs[3]}: Hi {name}!")
+    print(f"{madlibs[3]}: How was your-")
+    time.sleep(1)
+    slow_typing("Suddenly the wind picks up and you hear-", 0.08)
+    print(f"{name}: A CROW!!")
+    time.sleep(1)
+    choice = check_valid_input("[run] or [stay]","[run] or [stay]",['run', 'stay'])
+    if choice == 'run':
+        stats['health'] -= 5
+        stats['safety'] -= 10
+        time.sleep(1)
+        print(f"*You grab {madlibs[2]}'s and {madlibs[3]}'s hand and start running*")
+        time.sleep(2)
+        print(f"{madlibs[3]}: What are you doing!")
+        time.sleep(1)
+        print(f"{name}: I don't have time to explain, im sorry. But we have to get away from here!")
+        time.sleep(3)
+        print(f"{madlibs[2]}: What? Are you afraid of crows?")
+        time.sleep(2)
+        slow_typing("*You ignore their questions and lead them back to your house*", 0.06)
+        time.sleep(1)
+        slow_typing(". . .", 0.15)
+        pause("How are you going to explain this one to them?")
+    else:
+        stats['safety'] += 10        
+        stats['health'] -= 30
+        if cricket_bat == 'yes':
+            time.sleep(1)
+            print("*Instinctively, you grab your cricket bat (that you just happened to have with you),*")
+        else:
+            print("*Instinctively, you grab your math book aka The Brick (that you just happened to have with you),*")
+        time.sleep(3)
+        print(f"{name}: Everyone!! Keep your guard up! Something's going to jump out at us!")
+        time.sleep(4)
+        print(f"{madlibs[3]} and {madlibs[2]}: ...?")
+        time.sleep(2)
+        print("\nrustle rustle...")
+        time.sleep(2)
+        print("\nSNAP*")
+        time.sleep(1)
+        print("""
+                      meow??
+               /\ _ /\  
+             =( • ༝ • )=
+               /      \    
+""")
+        time.sleep(2)
+        slow_typing(". . .", 0.06)
+        time.sleep(2)
+        slow_typing(f"{madlibs[3]}: A cat-", 0.06)
+        time.sleep(0.5)
+        print("""
+     _.._      𓌹  𓌺    EEUUUGGHHHHH.....
+    {¬ºཀ°}¬    (꒪ཀ꒪)
+      ||       {-}-,
+     / \       | |   
+""")
+        time.sleep(1)
+        print(f"{name}: AARRGGHHH!!!")
+        pause("You fight off the monsters with your 'weapon'")
+        pause(f"Your friends quickly join the fray, brandishing anything they can find. ({madlibs[2]} found a big stick and {madlibs[3]} is just swinging around a bag)")
+        slow_typing("These monsters are more bark than bite, and together with your friends, you fight them off", 0.07)
+        time.sleep(1)
+        if stats['health'] < 31:
+            time.sleep(1)
+            slow_typing(". . .", 0.5)
+            time.sleep(1)
+            print("*THUD*")
+            time.sleep(1)
+            print(f"{madlibs[2]} and {madlibs[3]}: {name}!!")
+            time.sleep(1)
+            slow_typing("*Your health dropped below 30 and you fainted!*", 0.06)
+            time.sleep(1)
+            pause("*Your friends call an ambulance and you're rushed to the hospital*")
+
+
+teacher3 = random.choice(teachers)
+time.sleep(3)
+pause("\n\nThe term goes by in a blur of tests and assignments.")
+pause("You get swept up in the fray...")
+print("--------------------------------------------------------------------")
+slow_typing("                     One day in class:", 0.06)
+time.sleep(1)
+pause("*You're all preparing for your semester 2 exams*")
+slow_typing(". . .", 0.1)
+pause("Or atleast, you're all supposed to be")
+pause("It's a study period, what can you expect honestly?")
+choice = check_valid_input("\nWhat are you doing?\na) Studying\nb)Studying duh... :)","choose [a] or [b]",['a', 'b'])
+if choice == 'a':
+    stats['academics'] += 10
+    time.sleep(1)
+    slow_typing("*You're actually studying...*", 0.06)
+    slow_typing("But you can hear some giggling behind you.", 0.06)
+    pause("You ignore it and get on with your work.")
+    time.sleep(2)
+    print("*SPLAT*")
+    time.sleep(0.7)
+    print('''
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡴⠶⡄⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⢀⣤⠤⣤⡀⢀⡗⠒⣧⠴⠋⠚⠉⠙⠳⣄⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢀⡞⢁⣠⡟⠻⣎⠃⢰⠏⠀⠀⠀⠀⠀⠀⢘⣧⣤⣄⡀⠀⠀⠀
+⠀⠀⠀⠀⠀⣠⠞⠓⡶⢦⣻⡄⣨⠷⠚⠒⠶⡤⠀⠀⢀⡴⠋⠁⢠⣇⠙⢳⣄⠀
+⠀⠀⠀⢠⣞⠁⣠⠶⢧⣄⠈⣿⠳⠶⢤⣀⠀⠈⢩⠴⠟⠛⣯⠙⢳⡌⠻⣯⡘⡆
+⠀⠀⢠⠏⢈⡟⠁⢀⣠⣤⠖⣿⡤⣄⣀⠙⢧⣀⣸⡀⠘⣦⡛⢳⡴⠻⣄⠈⠉⠁
+⢀⣴⠟⢳⡞⢀⡴⠋⠀⣼⠗⡿⢠⡏⢹⣇⣤⡽⢫⡉⢻⡁⢹⡄⠻⣄⣸⠧⣄⡀
+⠘⠶⠖⠋⣠⠟⢙⡶⢺⠷⣴⠛⠺⢦⡾⠐⣾⣇⣼⡇⠀⣟⠋⢷⠀⠈⠳⢤⡤⠇
+⠀⠀⠀⣴⠛⣦⠏⠀⣼⣀⡏⠀⠀⣼⠦⣾⠉⡇⠸⠇⠀⢹⣀⣸⡆⠀⠀⠀⠀⠀
+⠀⠀⡼⢧⣴⠃⠀⢸⣃⡼⠁⠀⠀⣿⣤⣿⠀⡟⠉⣇⠀⠀⢿⡀⢻⡀⠀⠀⠀⠀
+⠀⠸⣇⡼⠃⠀⠀⠀⠉⠀⠀⠀⠀⠹⣤⡿⠀⢿⣠⣿⠀⠀⠀⠙⠋⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⡆⠘⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⠴⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀
+''')
+    time.sleep(1)
+    print(f"{name}: AAAAAAAAAAAAAAAAAAAHHHHHHHHHHHHHHHHHHDRTYUIKJHGFDSRFYLDTROERPD (ᗒᗣᗕ)՞")
+    time.sleep(1)
+    slow_typing("*Laughter erupts from the class*", 0.06)
+    time.sleep(1)
+    slow_typing("*You slowly turn around and glare at all the students*", 0.06)
+    time.sleep(1)
+    pause("*It's super effective!!")
+    pause("The students all look away...")
+else:
+    stats['health'] += 2
+    stats['academics'] -= 5
+    time.sleep(1)
+    slow_typing(". . .", 0.1)
+    time.sleep(1)
+    pause("Well if you fail your semesters, you'll know you had it coming ^-^")
+    time.sleep(2)
+    print("\nclassmate: psst.")
+    time.sleep(2)
+    print("\nclassmate: PSSTT")
+    time.sleep(1)
+    pause("You turn to look at him.")
+    pause('''He passes you a fake spider and dares you to throw it on the teachers desk.
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡴⠶⡄⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⢀⣤⠤⣤⡀⢀⡗⠒⣧⠴⠋⠚⠉⠙⠳⣄⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢀⡞⢁⣠⡟⠻⣎⠃⢰⠏⠀⠀⠀⠀⠀⠀⢘⣧⣤⣄⡀⠀⠀⠀
+⠀⠀⠀⠀⠀⣠⠞⠓⡶⢦⣻⡄⣨⠷⠚⠒⠶⡤⠀⠀⢀⡴⠋⠁⢠⣇⠙⢳⣄⠀
+⠀⠀⠀⢠⣞⠁⣠⠶⢧⣄⠈⣿⠳⠶⢤⣀⠀⠈⢩⠴⠟⠛⣯⠙⢳⡌⠻⣯⡘⡆
+⠀⠀⢠⠏⢈⡟⠁⢀⣠⣤⠖⣿⡤⣄⣀⠙⢧⣀⣸⡀⠘⣦⡛⢳⡴⠻⣄⠈⠉⠁
+⢀⣴⠟⢳⡞⢀⡴⠋⠀⣼⠗⡿⢠⡏⢹⣇⣤⡽⢫⡉⢻⡁⢹⡄⠻⣄⣸⠧⣄⡀
+⠘⠶⠖⠋⣠⠟⢙⡶⢺⠷⣴⠛⠺⢦⡾⠐⣾⣇⣼⡇⠀⣟⠋⢷⠀⠈⠳⢤⡤⠇
+⠀⠀⠀⣴⠛⣦⠏⠀⣼⣀⡏⠀⠀⣼⠦⣾⠉⡇⠸⠇⠀⢹⣀⣸⡆⠀⠀⠀⠀⠀
+⠀⠀⡼⢧⣴⠃⠀⢸⣃⡼⠁⠀⠀⣿⣤⣿⠀⡟⠉⣇⠀⠀⢿⡀⢻⡀⠀⠀⠀⠀
+⠀⠸⣇⡼⠃⠀⠀⠀⠉⠀⠀⠀⠀⠹⣤⡿⠀⢿⣠⣿⠀⠀⠀⠙⠋⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⡆⠘⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⠴⠃⠀
+''')
+    choice = check_valid_input("Do you do it?\na) No!\nb) yeah ¬‿¬","choose [a] or [b]",['a', 'b'])
+    if choice == 'a':
+        stats['social'] -= 3
+        stats['safety'] += 2
+        time.sleep(1)
+        pause("The guy turns away dissapointed")
+    else:
+        stats['social'] += 3
+        time.sleep(1)
+        pause("You grab the spider and throw it onto the teachers desk, immediately covering your face with a book afterwards.")
+        time.sleep(2)
+        print(f"{teacher3}: OOOOOAAAAAHHHHHHHH!!!!")
+        time.sleep(1)
+        print("class: *laughter*")
+        time.sleep(1)
+        print(f"{teacher3}: THAT'S IT, YOU'RE ALL STAYING BACK FOR DETENTION!!")
+        time.sleep(3)
+        print(f"{name}: (ㆆ_ㆆ)")
+        time.sleep(1)
+        slow_typing(". . .", 0.1)
+        time.sleep(1)
+        pause("Good one dude")
+        
+            
+
