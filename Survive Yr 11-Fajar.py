@@ -244,6 +244,8 @@ time.sleep(1)
 slow_typing('''Every day you would look forward to {0}. On the weekends you enjoyed {1} with {2} and {3}. Studying was {4}.
 Once, you even lost your {5} {6} some {7}. Those same {7} were a gift by your {8} after completing your tests. Speaking of tests, should'nt you be studying for your finals?'''.format(*madlibs),0.08)
 
+cricket_bat = ''
+
 def weekend():
     time.sleep(2)
     choice = check_valid_input("Will you study or not?\na) Ofcourse, i can't fail my finals!\nb) nah\n", "choose from [a] or [b]:", ['a', 'b'])
@@ -320,6 +322,7 @@ def weekend():
                 print("\n─=≡Σ ﾍ( ´Д`)ﾉ")
                 time.sleep(1)
                 print("*and you keep running until you make it back, grabbing the cricket bat that was lying on your lawn on your way in*")
+                cricket_bat == 'yes'
                 time.sleep(5)
                 slow_typing(". . .", 0.1)
                 pause("Why do these monsters keep showing up?")
@@ -340,6 +343,7 @@ def weekend():
                 time.sleep(2)
                 pause("You feel a strange sense of deja vu...")
                 pause("You spot a cricket bat on the lawn infront of your window. You bring it in with you.")
+                cricket_bat == 'yes'
                 break
             elif choice == 'no':
                 stats['safety'] -= 5
@@ -368,6 +372,7 @@ def weekend():
                 print("\n─=≡Σ ﾍ( ´Д`)ﾉ")
                 time.sleep(1)
                 print("*and you keep running until you make it back, grabbing the cricket bat that was lying on your lawn on your way in*")
+                cricket_bat == 'yes'
                 time.sleep(5)
                 slow_typing(". . .", 0.1)
                 pause("Why do these monsters keep showing up?")
@@ -379,9 +384,10 @@ def weekend():
                 choice = input("(yes/no)")
 weekend()
 
+score = ''
 def exam():    
     time.sleep(2)
-    print("----------------------------------------------------------------------------")
+    print("\n\n----------------------------------------------------------------------------")
     print("                         »»—— Exam time! ——««")
     time.sleep(2)
     slow_typing("*You walk into the exam hall*", 0.06)
@@ -403,6 +409,7 @@ def exam():
         slow_typing("*You ended up falling asleep during your test because you were so tired!*", 0.08)
         time.sleep(2)
         pause("Did you finish atleast?")
+        score = random.randint(70,79)
     elif 42 < stats['academics'] <= 48:
         time.sleep(1)
         pause("You feel confident, trusting yourself because you studied.")
@@ -413,6 +420,7 @@ def exam():
         time.sleep(3)
         pause("You completed your test and triple checked it.")
         pause("You have a good feeling about this.")
+        score = random.randint(80,100)
     elif 30 <= stats['academics'] <= 42:
         time.sleep(1)
         pause("you sit down and stare at your paper.")
@@ -424,6 +432,7 @@ def exam():
         print("*sigh*")
         time.sleep(2)
         pause("it wasn't that good, but atleast you finished the test.")
+        score = random.randint(50,69)
     elif 18 <= stats['academics'] < 30:
         time.sleep(1)
         pause("Its dawning on you now just how much trouble you're in.")
@@ -434,7 +443,7 @@ def exam():
         slow_typing("55 minutes later...", 0.18)
         time.sleep(3)
         pause("Welp, you definitely failed that.")
-        score = random.randint(1-49)
+        score = random.randint(1,49)
     else:
         time.sleep(1)
         slow_typing("and you walk out.", 0.08)
@@ -446,32 +455,34 @@ def exam():
         time.sleep(2)
         pause("*You're currently leaning on the school gate scrolling through your phone*")
         pause(f"{name}: whatever ¯\_(•-•)_/¯")
-        score = '0%'
+        score = 0
 exam()
 
-time.sleep(3)
-print("\n\n*It is now the end of the term*")
-time.sleep(1)
-slow_typing("You have recieved your report...", 0.1)
-time.sleep(2)
-print(f'''
---------------------------------------------------------------------
-                         [End card]
-                  ..........................''')
-slow_typing(f"Exam results: Your average is {score}%", 0.05)
-time.sleep(2)
-print(f"Your stats currently are:")
-time.sleep(2)
-print(f"Health: {stats['health']}")
-time.sleep(0.8)
-print(f"Academics: {stats['academics']}")
-time.sleep(0.8)
-print(f"Social: {stats['social']}")
-time.sleep(0.8)
-print(f"Safety: {stats['safety']}")
-time.sleep(3)
-check_stats()
-print("*End of term 1*")
+def end_of_term(term):
+    time.sleep(3)
+    print("\n\n*It is now the end of the term*")
+    time.sleep(1)
+    slow_typing("You have recieved your report...", 0.1)
+    time.sleep(2)
+    print(f'''
+    --------------------------------------------------------------------
+                             [End card]
+                      ..........................''')
+    slow_typing(f"Exam results: Your average is {score}%", 0.05)
+    time.sleep(2)
+    print(f"Your stats currently are:")
+    time.sleep(2)
+    print(f"Health: {stats['health']}")
+    time.sleep(0.8)
+    print(f"Academics: {stats['academics']}")
+    time.sleep(0.8)
+    print(f"Social: {stats['social']}")
+    time.sleep(0.8)
+    print(f"Safety: {stats['safety']}")
+    time.sleep(3)
+    check_stats()
+    print(f"*End of term {term}*")
+end_of_term(1)
 
 
 #term 2
@@ -729,6 +740,296 @@ else:
         time.sleep(23)
         print("--------------------------------------------------------------------")
         slow_typing("*You attend detention*", 0.06)
+        stats['social'] -= 5
         time.sleep(2)
         print("Just do the project next time (¬_¬ )")
-             
+        
+time.sleep(3)
+print("--------------------------------------------------------------------")
+slow_typing("One night you were just sleeping, as some students do. But suddenly you awoke, your throat as dry as a rock. You walked to the kitchen to get some water.", 0.04)
+slow_typing("Gulp gulp gulp...", 0.1)
+slow_typing("Refreshed, you walk back to your room, bearly keeping your eyelids open. But what you see next opens them right up.", 0.06)
+time.sleep(2)
+slow_typing("Something is trying to climb in through your window...", 0.15)
+time.sleep(1)
+print("""
+⠀⡐⠀⠆⡐⢀⠂⠄⠠⠀⢀⡘⠀⠀⠀⠰⢁⠂⡘⠐⡀⠒⡀⢂⠁⠊⠄⠡⢈⠐⠡⠈⠄⠃⠌⡐⠠⠑⠂⠡⠐⢂⠑⡈⠄⠃⠄⠑⠂⠌⢂⠀⠀⠀⣞⠀⠀⠄⡈⠰⠉⠁⡉⢉⠉⡉⢋⠉⢉⠃⡑⢋⠒⠓⠒⡒
+⠞⠒⡉⠒⡐⠂⡞⠐⠃⠘⠂⡆⠉⠀⠀⠘⠀⠂⠐⠀⠐⠀⠐⠀⠈⠐⠈⠐⠀⠈⠀⡡⠈⠐⠀⠐⠀⠂⠁⠀⠁⠀⠂⠀⠐⠈⠀⠠⠁⠌⢂⠀⠀⢰⢨⠆⠥⠲⢤⠓⣤⣥⡰⣤⣌⣄⡣⢌⡄⣂⡄⢣⣄⣃⣐⡁
+⠠⡁⢄⠡⠐⢨⢀⠂⣌⠐⡠⠁⠀⠀⠀⣠⢄⣠⣀⣄⣠⣀⢄⣠⢀⡄⣠⢀⣠⢶⣻⣿⣿⡿⣶⢀⢀⡀⣀⢀⡀⣀⠀⡀⢀⠀⣀⠀⣀⢀⡀⠀⠀⢈⡚⡄⠀⠐⡀⠂⢄⠠⡐⢠⠐⡄⡐⠠⠈⡄⢉⠡⠌⡉⢉⡉
+⡉⠙⢨⠉⢋⠡⠉⢉⠈⠉⢸⠀⠀⠀⠀⠛⣉⣉⣉⣉⣉⣉⣋⣉⣉⣉⣉⣩⡟⡴⣻⣿⡏⠷⣜⣻⣮⣉⣉⣍⣉⣉⣍⣩⣉⣍⣤⣉⣤⣄⡈⠀⠀⠀⢏⡔⠚⠒⠒⠞⡒⠖⠳⢦⠳⠖⡤⠧⢦⠤⡥⢮⢦⡕⡦⣔
+⣄⣉⣐⣈⣄⣂⣁⣂⣈⣀⠣⠀⠀⠀⠀⠂⠉⠈⠁⠉⠈⠁⠈⠁⠉⠈⠉⣿⣿⣕⢣⡚⣿⢈⣶⣹⣿⣃⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⢩⠁⠀⠀⠀⡈⠆⡐⠈⡐⠨⢅⡘⡐⢢⠐⡌⠰⠀⠆⡐⡀⠂⡇⠐⢤⠠
+⢉⠋⡉⢉⠉⡏⠩⢉⠩⠙⠦⠀⠀⠀⠀⢰⣶⣶⣶⢶⣶⣶⣶⣶⣶⣶⡶⣿⣿⣿⣬⠳⢩⡎⣽⡟⣯⢏⣴⣦⣴⣤⣤⣤⣤⣤⣤⣤⣤⣬⡆⠀⠀⠀⠁⡖⠓⠒⠓⠲⠬⠥⠷⠬⢦⡵⢦⠴⣤⢥⣣⣤⣓⣰⣈⣄
+⣀⣂⡐⣀⢰⡡⣁⡂⣄⢡⠒⠀⠀⠀⠀⢸⣿⣿⣿⢻⣿⣾⣽⣿⣿⣽⣿⣿⣿⣿⣚⣧⣿⣿⢼⣿⡇⡏⠈⠙⠛⠻⢿⡿⡿⢿⣽⣿⣿⣿⡇⠀⠀⠀⠀⢧⠀⠡⢂⠑⠠⢌⠰⣁⠢⢸⠀⠆⢠⠀⡄⡀⢠⠐⠌⡄
+⡉⢉⠉⢉⠁⡁⠉⠁⡈⢘⠆⠀⠀⠀⠀⣻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣯⣿⡿⠉⣓⢃⣿⣿⣿⣗⣿⣽⣷⡦⠀⠀⠀⠀⠹⣽⣿⣿⣿⣿⣿⡧⠀⠀⠀⠈⡶⠙⠂⠃⢋⢳⠊⠖⠲⠲⠹⠚⠶⠒⠖⢦⠱⠤⣉⠶⢤
+⣐⣠⣊⣄⣂⣀⣁⣂⣐⡌⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣟⣿⣿⣿⣿⡃⠀⠌⣳⣾⣿⣿⣿⠼⣿⣿⣧⠄⠀⠀⠀⠀⠹⣿⣿⣿⣿⣿⣗⠀⠀⠀⠀⡱⢀⠠⠁⢂⠸⡁⢌⠱⢈⠡⢚⠠⠉⢆⠐⡂⠄⡇⡐⢂
+⠄⠡⢀⠨⢇⠠⠀⠄⡠⢛⢀⠀⠀⠀⢠⣿⣿⣿⣿⣿⣿⣾⣿⣾⣟⣿⣿⡇⠀⠀⠹⣿⣿⡏⣱⡂⢽⣿⣿⠀⡀⠀⠀⠀⠀⠈⣿⣿⣿⣿⣯⠀⠀⠀⢀⢸⠋⡉⢉⡉⢋⠙⠋⠛⡙⠓⡟⠒⠓⠲⠚⠶⠲⠳⠶⠳
+⣊⣔⣡⣘⢢⣄⣡⣂⣄⢇⠂⠀⠀⠀⢰⣿⣿⣿⣿⣿⣿⣿⢿⣿⣿⣿⣿⣟⡀⣀⢀⢻⣿⣿⣄⠀⢻⣿⣿⣿⡄⠀⣀⡠⣴⣾⣿⣿⣿⣿⣷⠀⠀⠀⠀⢪⠇⡐⠠⠐⢂⡉⠄⠃⠆⠓⣸⠀⡍⢂⠱⣀⠡⢒⠠⠐
+⠠⠄⡀⠀⠄⡀⠀⠀⣘⠣⠀⠀⠀⠀⢸⣿⣿⣿⣿⢿⣷⣿⣿⣿⣿⣿⣿⢯⡷⣐⠊⠜⣿⣿⣿⣄⣼⣿⣿⣿⡧⢉⠄⡒⣿⡧⠹⣿⣿⣿⣿⠀⠀⠀⠀⢸⠋⡑⠋⠙⠒⡛⠚⡛⢓⠓⡘⠒⠳⠚⠓⠦⠳⢎⡶⠵
+⣁⣆⣠⣁⣂⣐⣠⣀⡔⠂⠀⠀⠀⠀⣻⣿⣿⣿⣿⢿⣿⣿⣿⣿⣿⣿⡿⣿⣿⣆⢁⠊⢽⣿⣿⣿⣿⣿⣿⣿⡗⡀⢂⢱⡿⠁⠀⠀⠙⢿⣿⠀⠀⠀⠀⢨⠃⢀⠘⠠⠁⣏⠠⡑⢌⡘⡄⢩⡐⠡⢈⠂⠡⢀⡇⡀
+⢈⠠⢉⡆⠡⢀⠁⠄⡹⠀⠀⠀⠀⠀⣿⣟⡽⢫⠝⢫⠛⣾⣿⣟⣯⣿⣹⣿⣿⣿⡂⠌⣸⣿⣿⣿⣿⣿⣿⣿⡧⠐⠠⢹⠁⠀⠀⠠⠔⢺⣿⡀⠀⠀⠀⢬⠟⠉⢋⠙⡙⠘⢛⡙⠖⠓⢳⡓⠚⠳⠲⠳⠖⢖⠺⠰
+⣂⡐⣸⡄⣁⣂⢌⡀⢇⠀⠀⠀⠀⠠⣿⣾⢥⠣⢌⠢⣵⣾⣟⣿⡽⣻⣿⣿⣿⣿⣓⠰⠠⣿⣿⣿⣿⣿⣿⣿⣷⢁⠂⡹⣡⠌⢀⠀⠉⠢⣽⠂⠀⠀⠀⣈⠆⢀⠢⠐⣈⠢⡁⠆⡅⠊⡔⡇⢀⠑⡠⠑⡌⢢⡑⠢
+⡉⢉⠡⢉⠉⠉⠉⠙⠦⠀⠀⠀⠀⢸⢿⣍⠲⢁⡊⠷⢻⣾⣿⣻⣽⣿⣿⣿⣿⣿⣧⠊⣅⢻⣯⣿⣿⣿⣿⣛⣟⢢⢂⢱⠏⠀⠂⠈⠄⠠⣘⠆⠀⠀⠀⢠⡗⡒⠒⠲⡒⢖⡓⠾⠔⠳⠼⠣⠶⠼⠵⠼⠤⠧⢼⠥
+⢈⢂⡐⠂⠌⡐⢁⠘⡂⠀⠀⠀⠀⢸⡯⢆⢃⠆⡌⢧⠡⢻⣽⣿⣽⣷⣿⣿⣿⣿⣷⢃⡌⢺⣿⣿⣿⣿⢷⡿⣼⢃⠎⣜⠀⢂⠀⠐⡈⢄⣿⡇⠀⠀⠀⠠⣣⠑⠌⡡⢉⢼⡀⠄⠐⡈⠄⠂⠄⠰⡀⢂⠰⡀⢊⡇
+⠛⢺⡜⠛⠙⠙⠋⠳⡄⠀⠀⠀⠀⣸⢟⡬⣌⠰⣌⢣⠹⣘⠿⢳⣿⣞⣿⣿⣿⣿⣿⡆⠬⢹⣿⣿⣿⣿⣿⣿⣯⢇⡺⣇⠈⠀⢀⠂⣐⣾⣿⡇⠀⠀⠀⠐⣧⠚⠶⠱⠎⠶⡱⠖⠶⡴⠭⢖⠬⠰⠴⣠⠦⡤⢥⠦
+⠄⣻⠄⡐⢈⠐⠀⡓⠀⠀⠀⠀⠀⠾⠙⠶⠉⠳⠌⠃⠛⠌⠳⠸⠷⠛⠿⠻⠿⠟⠿⢇⠡⣃⠿⢿⠿⡿⢿⡿⣿⢧⣻⡷⣜⡠⠀⠀⠘⣿⣿⡇⠀⠀⠀⠈⣷⠀⢢⠁⡌⢂⠔⡨⠐⠠⢐⢺⠀⣁⠂⡀⠄⡠⠄⡀
+⠷⠷⠶⠶⠶⣶⠶⢭⢀⠀⠀⠀⠀⠐⠀⠂⠂⠐⠀⠂⠐⠀⠂⠀⠂⠐⠂⠒⠐⠒⠒⢂⠣⠄⡋⠄⡒⠐⠢⠰⡜⢢⢽⣿⣭⠳⣁⠂⠀⠀⠄⠠⠀⠀⠀⠈⣶⡬⣤⣒⣬⣡⣊⣔⣡⡜⣀⣫⣐⣤⣃⣐⣁⣢⣁⣢
+⢂⠐⠠⢂⠐⣈⢿⡀⢥⡈⢴⡦⠔⠦⡴⢴⡐⠦⣐⠰⡤⢤⠴⡤⢦⡄⢂⡐⠠⢤⡤⢦⢱⡎⡔⢧⣸⣧⣎⡗⣨⢀⣋⢾⣾⣿⣆⠆⡐⠈⠀⠤⣤⢀⡀⠡⠻⡄⢢⠐⢤⠂⡧⢀⠠⠀⡔⠠⢀⠄⡰⠄⠤⢀⠄⡰
+⢎⡴⣡⢆⡦⣤⡗⡌⢦⠑⣮⠇⡎⠵⣈⢯⠐⡎⣌⠓⡏⠤⢋⡜⢥⠋⢦⢙⡱⢻⡜⡿⣿⣿⣿⣿⣿⠹⣿⣾⣧⣾⣼⣿⣿⣿⣿⡼⣄⠠⠀⠐⢸⢎⡵⣋⠥⣇⣂⣙⣢⢁⣇⣠⢘⣐⢠⣑⣈⠰⣀⢃⢆⣈⢆⢰
+⢠⡓⢄⠢⡐⡜⣧⣜⣡⣋⣼⣟⣘⣣⣃⣯⣘⣰⣈⣦⣙⣣⣭⣜⣣⣝⣢⢏⡜⣧⡽⢼⡱⢮⡟⡰⠎⢳⢹⡏⠛⡟⢫⣿⡟⣿⣿⣷⡞⡴⠀⠂⠈⢒⠶⡩⠖⡍⡉⢉⠡⢉⠜⡩⢩⡍⣩⠱⡎⢱⡈⠎⣬⢡⢊⡍
+⣄⣧⣈⣦⣱⣼⣟⣨⣡⣍⣩⣉⣉⣡⢉⣩⡁⢋⠉⣌⢩⡑⢌⡩⡹⢌⢣⠋⡙⢩⠛⢋⠙⡋⢿⠙⢋⠛⣏⠛⡛⢛⡛⣿⢛⡟⡿⣿⣿⡵⢣⠐⠀⠘⣻⢛⡿⡇⡱⢈⠆⡌⠤⡑⢢⢒⡱⢌⠇⠢⣍⠲⠰⣌⠣⣌
+⠿⢇⡘⢤⠣⣽⢨⢃⡑⡏⢡⢁⠆⢠⢁⠣⢘⢡⠘⡌⢢⠜⡠⢃⣍⢙⡎⠡⢈⠍⢨⠁⣍⠹⣨⠉⡍⢫⡉⢝⡩⢋⡝⣟⢫⡟⣽⣻⣟⡿⣧⢣⠄⠀⠰⣏⡾⡻⣝⠋⠾⢙⠚⣙⠚⡋⣖⠋⣆⡑⢒⢂⢋⠰⢃⠒
+⣋⢤⡙⢤⡓⢼⣧⢂⢜⡇⢜⠢⠎⡰⣈⠳⢨⢎⡘⢜⢠⠓⡌⢒⡌⢸⠇⠘⣄⠋⢤⢃⠤⢓⠴⡈⢜⢠⠚⡤⣑⠣⢎⣯⢳⢪⢵⡳⣯⢿⣽⣳⢎⡀⠀⢫⡹⢧⡯⢌⡱⢨⡙⡠⢋⡅⢲⡑⠴⡡⢍⢂⠎⢸⠂⡏
+⡟⢋⠟⣛⢛⢻⡛⠿⡾⢾⢿⣿⣷⣷⣷⣿⣞⣞⣾⢾⣞⡿⣜⣳⣞⣯⣻⢾⣶⣻⢶⣞⣾⣼⣾⣴⣞⡶⣿⣴⣧⣿⣶⣧⣿⣷⣮⣷⣿⣿⣶⣿⣿⡄⠂⢀⢹⣾⣼⣧⣾⣴⣧⣧⣽⣦⣧⣽⣷⣵⣾⣼⣾⣬⣷⣮
+⡇⢋⡞⢤⢋⢦⢝⡲⣍⠆⢮⡐⢆⡐⢆⢆⣹⡇⣩⢉⠬⢩⠍⣭⠩⣍⢍⠫⡭⢍⢏⡹⢩⡍⣽⠩⡏⡽⢩⡍⡭⠭⣍⢯⡍⢯⣙⢯⡹⣏⡿⣹⣯⢷⡈⠄⠠⣘⢧⡒⣜⠰⡰⢆⠦⡐⡆⠖⡄⡆⣲⢰⡒⣖⠲⣬
+⠾⡳⢾⠳⣯⠾⢾⠶⣭⣮⣧⣭⢶⣼⣬⣶⣼⢧⣦⣧⣮⣴⣧⣼⣱⣮⣌⣳⣼⣑⣮⣜⣥⣒⣽⣲⣍⣣⣳⣸⣑⣫⣜⣶⣍⣳⣎⣷⣹⣞⣽⣳⣿⣯⠖⡈⠐⡈⣳⣝⣬⣓⣱⣋⣼⣡⣋⣹⣐⣇⣱⣣⣙⣎⣓⣶
+⣏⢵⣋⠷⣌⢳⠪⡔⣿⠐⣦⡑⢮⢰⢣⠞⣆⠯⡒⢆⢦⡱⢰⠆⣇⢸⣍⠲⡌⡝⡼⣉⢎⠭⣜⣣⢸⢉⠧⣉⢏⠭⡍⣿⡙⢯⡹⣏⡿⣹⣛⡯⣿⠽⣏⠐⠠⡀⠉⢿⢩⢏⣭⢹⡩⢵⢫⡙⢶⡘⢧⡩⢍⣏⠹⣐
+⣞⣲⣭⣻⡴⣋⡵⣂⣿⣘⢦⡹⣜⣬⢻⣭⢳⣯⢱⢏⡶⣭⣛⡼⣡⢺⢔⠣⡙⣜⢲⠡⣎⠳⣌⡓⢮⡙⡞⣤⢏⡞⡔⣿⢸⢧⣳⠽⣖⢯⣷⣫⣽⣛⠦⢃⠡⢀⠁⢮⡑⣎⡖⣣⡝⡦⢧⣹⢲⣍⠳⣜⢲⡌⡳⢌
+⢹⡭⢯⢽⡹⣏⢿⣫⢝⣯⢻⣹⢋⡟⣿⡻⣿⣻⣛⢿⣾⡛⣿⢶⣟⣞⠺⣛⢳⡛⣞⠳⡞⠿⡾⢿⢞⡷⡿⢾⠿⢾⢷⡟⡿⣿⢾⡿⡾⣿⢾⢷⡿⢿⡃⣌⠲⢤⣉⢶⣻⣼⢻⣳⢻⠝⣷⠻⡞⡞⡿⣞⢿⣚⢿⡾
+⣟⣿⢯⣞⡵⢯⡞⣵⢺⢮⣳⡽⢮⣿⣽⡿⣿⣽⣿⣟⣾⣽⣞⡷⣞⢦⡳⢥⡳⡱⢎⡽⣘⡇⣿⣳⢞⣣⡟⣬⢏⡽⢮⣹⠜⣯⣻⡽⣟⣧⣟⢾⡟⣽⡵⣏⣻⡼⣾⢭⡷⣞⢿⡜⣯⢻⡼⡹⢆⣏⢷⣽⣫⣏⣷⣟""")
+time.sleep(2)
+pause("\n\n\ninternally:DTRDTFYGUCXDJTSDTFESIRDFAAAAAAAAAAAAAAHHHHHHHHHHH")
+pause("But externally, you slowly back out of your room into the hallway.")
+print("What on earth do you do?")
+if cricket_bat == 'yes':
+    choice = check_valid_input("a) There's a cricket bat...\nb) Hide ofcourse!","choose [a] or [b]",['a', 'b'])
+    if choice == 'a':
+        stats['safety'] += 10
+        time.sleep(1)
+        print("*You crawl into your room and make a grab for the bat*")
+        time.sleep(1.5)
+        print("Just as the monster turns to see you!")
+        time.sleep(1)
+        print('You grab the bat just as the monster jumps at you and...')
+        time.sleep(1.5)
+        print("You wack him on the head just as his slimy hand touches your face!")
+        time.sleep(3)
+        print("The monster sqeals in pain and runs away, climbing back out through your window")
+        time.sleep(3)
+        slow_typing(". . .", 0.15)
+        print("You cautiously walk to the window and lock it")
+        time.sleep(2)
+        print("You also hurry to the bathroom to wash whatever gunk is on your face off.")
+        time.sleep(5)
+        pause("\n*Would it be wrong to suggest at this very moment that you should go back to sleep, because you kind of like have your semester exams tomorrow and you need to be rested. Just a suggestion.*")        
+    else:
+        stats['safety'] -= 10
+        time.sleep(1)
+        pause("*You tiptoe into the kitchen and hide in the pantry*")
+        slow_typing("HshHSHshHSHHShhshSsSss......", 0.08)
+        time.sleep(2)
+        pause("*You hold your breath and pray whatever that thing is goes away.*")
+        time.sleep(1)
+        print("[Monster thing]: . . .??")
+        time.sleep(1)
+        slow_typing(". . .", 0.15)
+        time.sleep(2)
+        slow_typing("*The monster has left*", 0.06)
+        time.sleep(1)
+        slow_typing("*You wonder what it wanted*", 0.06)
+        time.sleep(2)
+        pause("\n*Would it be wrong to suggest at this very moment that you should go back to sleep, because you kind of like have your semester exams tomorrow and you need to be rested. Just a suggestion.*")        
+else:
+    choice = check_valid_input("a) I could get my math book...\nb) Hide ofcourse!","choose [a] or [b]",['a', 'b'])
+    if choice == 'a':
+        stats['safety'] += 7
+        time.sleep(1)
+        print("*You crawl into your room and make a grab for your math book that's resting on the table (fyi, its a brick!)*")
+        time.sleep(3.5)
+        print("Just as the monster turns to see you!")
+        time.sleep(1)
+        print('You grab the bat just as the monster jumps at you and...')
+        time.sleep(1.5)
+        print("You wack him on the head just as his slimy hand touches your face!")
+        time.sleep(3)
+        print("The monster sqeals in pain and runs away, climbing back out through your window")
+        time.sleep(3)
+        slow_typing(". . .", 0.15)
+        print("You cautiously walk to the window and lock it")
+        time.sleep(2)
+        print("You also hurry to the bathroom to wash whatever gunk is on your face off.")
+        time.sleep(5)
+        pause("\n*Would it be wrong to suggest at this very moment that you should go back to sleep, because you kind of like have your semester exams tomorrow and you need to be rested. Just a suggestion.*")
+        
+    else:
+        stats['safety'] -= 10
+        time.sleep(1)
+        pause("*You tiptoe into the kitchen and hide in the pantry*")
+        slow_typing("HshHSHshHSHHShhshSsSss......", 0.08)
+        time.sleep(2)
+        pause("*You hold your breath and pray whatever that thing is goes away.*")
+        time.sleep(1)
+        print("[Monster thing]: . . .??")
+        time.sleep(1)
+        slow_typing(". . .", 0.15)
+        time.sleep(2)
+        slow_typing("*The monster has left*", 0.06)
+        time.sleep(1)
+        slow_typing("*You wonder what it wanted*", 0.06)
+        time.sleep(2)
+        pause("\n*Would it be wrong to suggest at this very moment that you should go back to sleep, because you kind of like have your semester exams tomorrow and you need to be rested. Just a suggestion.*")
+        
+score = ''
+def exam2(stats, teacher1, name):
+    time.sleep(2)
+    print("\n\n----------------------------------------------------------------------------")
+    slow_typing("               *It's time for your semester exams (>_<)*", 0.06)
+    time.sleep(2)
+    slow_typing("*You walk into the exam hall*", 0.06)
+    if 52 < stats['academics'] < 55:
+        time.sleep(1)
+        pause("You feel confident knowing you've done all your work.")
+        slow_typing("*Your eyes droop a bit*", 0.08)
+        time.sleep(1)
+        pause("But you also feel tired. You couldn't sleep after what happened last night.")
+        time.sleep(1)
+        print("---------------------------------------------------------------")
+        time.sleep(1)
+        slow_typing("180 minutes later...", 0.18)
+        time.sleep(1)
+        slow_typing("z z zzzz...", 0.1)
+        time.sleep(2)
+        print(f"{teacher1}: {name}, wake up!")
+        time.sleep(2)
+        slow_typing("*You ended up falling asleep during your test because you were so tired!*", 0.08)
+        time.sleep(2)
+        pause("Did you finish atleast??")
+        score = random.randint(70,79)
+    elif 47 < stats['academics'] <= 52:
+        time.sleep(1)
+        pause("You feel confident, trusting yourself because you studied.")
+        pause("Good thing you managed to get some sleep last night, otherwise you would've been too tired to do the test today.")
+        print("---------------------------------------------------------------")
+        time.sleep(1)
+        slow_typing("180 minutes later...", 0.18)
+        time.sleep(3)
+        pause("You completed your test and triple checked it.")
+        pause("You have a good feeling about this.")
+        score = random.randint(80,100)
+    elif 36 <= stats['academics'] <= 47:
+        time.sleep(1)
+        pause("you sit down and stare at your paper.")
+        pause("It'll be fine right?")
+        pause("*You haven't really studied much, you didnt get enough sleep last night either...*")
+        print("---------------------------------------------------------------")
+        time.sleep(1)
+        slow_typing("180 minutes later...", 0.18)
+        time.sleep(3)
+        print("*sigh*")
+        time.sleep(2)
+        pause("it wasn't good, but atleast you finished the test :/ ")
+        score = random.randint(50,69)
+    elif 18 <= stats['academics'] < 36:
+        time.sleep(1)
+        pause("Its dawning on you now just how much trouble you're in.")
+        pause("You sit down and flick through the paper as the timer starts.")
+        pause("You honestly wonder if you're even sitting in the correct exam hall.")
+        print("---------------------------------------------------------------")
+        time.sleep(1)
+        slow_typing("180 minutes later...", 0.18)
+        time.sleep(3)
+        pause("Welp, you definitely failed that.")
+        score = random.randint(1,49)
+    else:
+        time.sleep(1)
+        slow_typing("You sit down and as you begin your test, your teacher walks up and writes 100% on your paper just like that. You smile :)*", 0.08)
+        time.sleep(1)
+        pause("Beside your bed, your mum frowns as she tries to wake you up.")
+        time.sleep(1)
+        slow_typing("*You were so tired you slept in and didnt show up to the test*", 0.06)
+        print("---------------------------------------------------------------")
+        time.sleep(1)
+        slow_typing("180 minutes later...", 0.1)
+        time.sleep(2)
+        print("*THUD*")
+        time.sleep(1)
+        slow_typing("*You fell off your bed!*", 0.06)
+        time.sleep(1)
+        pause("Atleast you're up now -__-' ")
+        score = 0
+    return score
+
+score = exam2(stats, teacher1, name)
+
+time.sleep(3)
+print("\n\n*It is now the end of the term*")
+time.sleep(1)
+slow_typing("You have recieved your report...", 0.1)
+time.sleep(2)
+print('''
+--------------------------------------------------------------------
+                         [End card]
+                  ..........................''')
+slow_typing(f"Exam results: Your average is {score}%", 0.05)
+time.sleep(2)
+print(f"Your stats currently are:")
+time.sleep(2)
+print(f"Health: {stats['health']}")
+time.sleep(0.8)
+print(f"Academics: {stats['academics']}")
+time.sleep(0.8)
+print(f"Social: {stats['social']}")
+time.sleep(0.8)
+print(f"Safety: {stats['safety']}")
+time.sleep(3)
+check_stats()
+print(f"*End of term 2*")
+
+
+#term three lol
+time.sleep(3)
+pause("\n\nYou and your family haven't been overseas in 4 years.")
+pause("Your parents haven't met their parents in that long either.")
+pause("So your parents have decided to wisk you all off back to your home country. ")
+pause("Except they plan on going for 3 months,")
+slow_typing(". . .", 0.15)
+pause("meaning you'll miss all of term 3.")
+pause("You try to talk them out of it, because you don't want to fail school, but they wont have it.")
+pause("They refuse to shorten the holiday or leave you behind.")
+pause("You have no choice but to go.")
+time.sleep(1)
+choice = check_valid_input("\nDo you:\na)Pack all your study material with you, so you don't fall too far behind\nb)Pack normally and plan to enjoy your time there\nc)Bring soft copies of all your materials","choose from [a], [b] or [c]",['a', 'b', 'c'])
+if choice == 'a':
+    stats['academics'] += 20
+    stats['health'] += 5
+    stats['social'] +=5
+    slow_typing("*You pack your books with you*", 0.06)
+    time.sleep(2)
+    print("--------------------------------------------------------------------")
+    slow_typing("                         Holiday time!", 0.06)
+    time.sleep(1)
+    slow_typing("Back home, you meet your cousins and grandparents and aunties and uncles and great aunties and second cousins..... The list goes on.", 0.04)
+    time.sleep(1)
+    slow_typing("But you also spend alot of time studying, making sure to stay in contact with your teachers and peers to help keep up with the class", 0.04)
+    time.sleep(2)
+    print("\n*end of holiday*")
+elif choice == 'b':
+    stats['academics'] += 5
+    stats['health'] += 10
+    stats['social'] +=20
+    slow_typing("*You pack your clothes and whatnot*", 0.06)
+    time.sleep(2)
+    print("--------------------------------------------------------------------")
+    slow_typing("                         Holiday time!", 0.06)
+    time.sleep(1)
+    slow_typing("Back home, you meet your cousins and grandparents and aunties and uncles and great aunties and second cousins..... The list goes on.", 0.04)
+    time.sleep(1)
+    slow_typing("You spend barely any time studying overseas.",0.04)
+    time.sleep(1)
+    pause("Instead, you spend alot of time with your family and have alot of fun.")
+    time.sleep(2)
+    print("\n*end of holiday*")
+else:
+    stats['academics'] += 10
+    stats['health'] += 5
+    stats['social'] +=10
+    time.sleep(1)
+    print("--------------------------------------------------------------------")
+    slow_typing("                         Holiday time!", 0.06)
+    time.sleep(1)
+    slow_typing("Back home, you meet your cousins and grandparents and aunties and uncles and great aunties and second cousins..... The list goes on.", 0.04)
+    time.sleep(1)
+    slow_typing("The internet absoluely sucked though, and you couldn't always access your studying materials.", 0.04)
+    time.sleep(1)
+    slow_typing("As a result, you didn't study as much as you should have.", 0.04)
+    time.sleep(2)
+    print("\n*end of holiday*")
