@@ -907,13 +907,13 @@ Spam has become part of popular culture, including a Monty Python sketch, which 
     time.sleep(2)
     slow_text("It is finally the end of the year. You have finally completed Year 11. Congratulations if you have made it this far!", 0.225)
 
-while play_again == True:
-    main()
-    play_again = input("Do you wish to play again?(y/n) ").strip().lower()
-    while play_again != 'y' and play_again != 'n':
-        play_again = input("I said y/n only ").strip().lower()
-    if play_again == 'y':
-        play_again = True
-    elif play_again == 'n':
-        play_again == False
+#while play_again == True:
+#    main()
+#    play_again = input("Do you wish to play again?(y/n) ").strip().lower()
+#    while play_again != 'y' and play_again != 'n':
+#        play_again = input("I said y/n only ").strip().lower()
+#    if play_again == 'y':
+#        play_again = True
+#    elif play_again == 'n':
+#        play_again == False
 raise SystemExit
